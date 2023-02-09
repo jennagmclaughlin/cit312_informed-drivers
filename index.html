@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>In-Formed Drivers</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header style="background-color: azure"><h1>Sample Form</h1></header>
+    <form id="sampleForm" action="#" method="get">
+      
+      <label for="customerName">Customer Name</label>
+        <input
+          type="text"
+          id="customerName"
+          name="customerName"
+          placeholder="first-name last-name"
+          size="25"
+          required
+          minlength="1"
+          maxlength="60"
+          pattern="^[A-Za-z]+\s[A-Za-z]+$"
+        />
+
+        <br><br>
+
+        <!-- input tag of type email -->
+      <label for="customerEmail">Customer E-Mail</label>
+      <input
+        type="email"
+        id="customerEmail"
+        name="customerEmail"
+        placeholder="xxxxxxxx@xxxxxx.com"
+        size="25"
+        required
+        minlength="1"
+        maxlength="60"
+      />
+
+      <br><br>
+
+      <label for="customerOrderId">Customer Order Id Number</label>
+
+        <input
+          type="number"
+          id="customerOrderId"
+          name="customerOrderId"
+          placeholder="-1"
+          size="5"
+          required
+          minlength="1"
+          maxlength="5"
+          min="-1"
+          max="15"
+          step="3"
+        />
+        <!-- "step" makes it go up by 3 in this case -->
+
+        <br><br>
+
+        <label for="customerBirthday">Enter your birthday for alcohol orders</label>
+        <input
+          type="date"
+          id="customerBirthday"
+          name="customerBirthday"
+          min="1899-12-01"
+          max="2005-12-01"
+        />
+
+        <br><br>
+
+        <label for="customerDeliveryTime">Requested Delivery Time</label>
+        <input
+          type="time"
+          id="customerDeliveryTime"
+          name="customerDeliveryTime"
+        />
+
+        <br><br>
+
+        <label for="customerComments">Your comments and notes for delivery</label>
+  
+          <textarea
+            id="customerComments"
+            name="customerComments"
+            placeholder="comments"
+          ></textarea>
+  
+        <br><br>
+
+        <!-- THE NAME FOR RADIO BUTTONS AND
+        CHECKBOXES MUST BE THE SAME IF GROUPED
+        TOGETHER -->
+
+      <fieldset>
+        <!-- Fieldset groups similar stuff together
+        Legend defines and is for screen readers -->
+        <legend>Choose pizza size</legend>
+          <input
+          type="radio"
+          id="smallOrder"
+          name="orderSize"
+          value="smallOrder"
+        /><label for="smallOrder">Small</label>
+
+        <br>
+
+        <input
+          type="radio"
+          id="mediumOrder"
+          name="orderSize"
+          value="mediumOrder"
+          checked
+        />
+        <label for="mediumOrder">Medium</label>
+
+        <br />
+
+        <input
+          type="radio"
+          id="largeOrder"
+          name="orderSize"
+          value="largeOrder"
+        /><label for="largeOrder">Large</label>
+      </fieldset>
+
+      <br><br>
+
+      <fieldset>
+        <legend>Select the cheese you want to add</legend>
+        <input
+          type="checkbox"
+          id="parmesan"
+          name="cheeses"
+          value="parmesan"
+        /><label for="parmesan">Parmesan</label>
+
+        <br>
+
+        <input
+          type="checkbox"
+          id="reggiano"
+          name="cheeses"
+          value="reggiano"
+        /><label for="reggiano">Reggiano</label>
+
+        <br>
+
+        <input
+          type="checkbox"
+          id="mozarella"
+          name="cheeses"
+          value="mozarella"
+        /><label for="mozarella">Mozarella</label>
+      </fieldset>
+
+      <br><br>
+
+      <!-- "Multiple" attribute allows
+        selection of multiple options -->
+      <label for="toppings">Toppings</label>
+      <br>
+        <select id="toppings" name="toppings" size="5" style="width: 200px" multiple>
+          <!-- "Optgroup" creates header in dropdown
+          to group items together -->
+          <optgroup label="meats - $1 extra">
+            <option value="sausage">Sausage</option>
+            <option value="ham">Ham</option>
+            <option value="pepperoni">Pepperoni</option>
+          </optgroup>
+          <option value="peppers">Peppers</option>
+          <option value="pineapple">Pineapple</option>
+          <option value="spinach">Spinach</option>
+        </select>
+
+        <br><br>
+
+      <input type="submit" id="process" />
+    </form>
+  </body>
+</html>
