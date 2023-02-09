@@ -8,176 +8,172 @@
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    <header style="background-color: azure"><h1>Sample Form</h1></header>
-    <form id="sampleForm" action="#" method="get">
-      
-      <label for="customerName">Customer Name</label>
-        <input
-          type="text"
-          id="customerName"
-          name="customerName"
-          placeholder="first-name last-name"
-          size="25"
-          required
-          minlength="1"
-          maxlength="60"
-          pattern="^[A-Za-z]+\s[A-Za-z]+$"
-        />
+    <header>
+      <h1>Ideal Car</h1>
+      <img src="img/logo.png" alt="Ideal Car logo">
+    </header>
 
-        <br><br>
-
-        <!-- input tag of type email -->
-      <label for="customerEmail">Customer E-Mail</label>
-      <input
-        type="email"
-        id="customerEmail"
-        name="customerEmail"
-        placeholder="xxxxxxxx@xxxxxx.com"
-        size="25"
-        required
-        minlength="1"
-        maxlength="60"
-      />
-
-      <br><br>
-
-      <label for="customerOrderId">Customer Order Id Number</label>
-
-        <input
-          type="number"
-          id="customerOrderId"
-          name="customerOrderId"
-          placeholder="-1"
-          size="5"
-          required
-          minlength="1"
-          maxlength="5"
-          min="-1"
-          max="15"
-          step="3"
-        />
-        <!-- "step" makes it go up by 3 in this case -->
-
-        <br><br>
-
-        <label for="customerBirthday">Enter your birthday for alcohol orders</label>
-        <input
-          type="date"
-          id="customerBirthday"
-          name="customerBirthday"
-          min="1899-12-01"
-          max="2005-12-01"
-        />
-
-        <br><br>
-
-        <label for="customerDeliveryTime">Requested Delivery Time</label>
-        <input
-          type="time"
-          id="customerDeliveryTime"
-          name="customerDeliveryTime"
-        />
-
-        <br><br>
-
-        <label for="customerComments">Your comments and notes for delivery</label>
-  
-          <textarea
-            id="customerComments"
-            name="customerComments"
-            placeholder="comments"
-          ></textarea>
-  
-        <br><br>
-
-        <!-- THE NAME FOR RADIO BUTTONS AND
-        CHECKBOXES MUST BE THE SAME IF GROUPED
-        TOGETHER -->
-
-      <fieldset>
-        <!-- Fieldset groups similar stuff together
-        Legend defines and is for screen readers -->
-        <legend>Choose pizza size</legend>
+    <main>
+      <form id="sampleForm" action="#" method="get">
+        <fieldset>
+          <legend>About You</legend>
+          <label for="name">Name</label>
+          <br>
           <input
-          type="radio"
-          id="smallOrder"
-          name="orderSize"
-          value="smallOrder"
-        /><label for="smallOrder">Small</label>
+            type="text"
+            id="name"
+            name="name"
+            placeholder="first name last name"
+            size="25"
+            required
+            minlength="1"
+            maxlength="80"
+            pattern="^[A-Za-z]+\s[A-Za-z]+$"
+          />
+  
+          <br><br>
+  
+          <label for="email">E-Mail</label>
+          <br>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="xxxxxxxx@xxxxxx.com"
+            size="25"
+            required
+            minlength="1"
+            maxlength="60"
+          />
+        </fieldset>
 
+        <fieldset>
+          <legend>Your Ideal Car's Basics</legend>
+
+          <label for="manufacturer">Manufacturer</label>
+          <br>
+          <select id="manufacturer" name="manufacturer" size="5" style="width: 200px">
+            <!-- "Optgroup" creates header in dropdown
+            to group items together -->
+            <option value="bmw">BMW</option>
+            <option value="ford">Ford</option>
+            <option value="general-motors">General Motors</option>
+            <option value="honda">Honda</option>
+            <option value="hyundai">Hyundai</option>
+            <option value="toyota">Toyota</option>
+          </select>
+
+          <br><br>
+
+          <label for="license">License</label>
+          <br>
+          <input
+            type="text"
+            id="license"
+            name="license"
+            placeholder="license"
+            size="25"
+            minlength="6"
+            maxlength="8"
+          />
+
+          <br><br>
+
+          <label for="color">Color</label>
+          <br>
+          <input type="color" id="color" name="color" required>
+        </fieldset>
+  
+          <!-- THE NAME FOR RADIO BUTTONS AND
+          CHECKBOXES MUST BE THE SAME IF GROUPED
+          TOGETHER -->
+  
+        <fieldset>
+          <!-- Fieldset groups similar stuff together
+          Legend defines and is for screen readers -->
+          <legend>Drive Options</legend>
+          <input
+            type="checkbox"
+            id="fourWheel"
+            name="driveOptions"
+            value="fourWheel"
+          />
+          <label for="fourWheel">Four-Wheel</label>
+  
+          <br>
+
+          <input
+            type="checkbox"
+            id="frontWheel"
+            name="driveOptions"
+            value="frontWheel"
+          />
+          <label for="frontWheel">Front-Wheel</label>
+
+          <br>
+  
+          <input
+            type="checkbox"
+            id="rearWheel"
+            name="driveOptions"
+            value="rearWheel"
+          />
+          <label for="rearWheel">Rear-Wheel</label>
+  
+          <br>
+  
+          <input
+            type="checkbox"
+            id="allWheel"
+            name="driveOptions"
+            value="allWheel"
+          />
+          <label for="allWheel">All-Wheel</label>
+        </fieldset>
+  
+        <fieldset>
+          <legend>Free Decoration</legend>
+          <input
+            type="radio"
+            id="airFreshener"
+            name="decorations"
+            value="airFreshener"
+          />
+          <label for="airFreshener">Air Freshener</label>
+
+          <br>
+
+          <input
+            type="radio"
+            id="bobbleHead"
+            name="decorations"
+            value="bobbleHead"
+          />
+          <label for="bobbleHead">Bobble Head</label>
+
+          <br>
+
+          <input
+            type="radio"
+            id="rubberDuck"
+            name="decorations"
+            value="rubberDuck"
+          />
+          <label for="rubberDuck">Rubber Duck</label>
+        </fieldset>
+
+        <label for="comments">Additional Comments</label>
         <br>
-
-        <input
-          type="radio"
-          id="mediumOrder"
-          name="orderSize"
-          value="mediumOrder"
-          checked
-        />
-        <label for="mediumOrder">Medium</label>
-
-        <br />
-
-        <input
-          type="radio"
-          id="largeOrder"
-          name="orderSize"
-          value="largeOrder"
-        /><label for="largeOrder">Large</label>
-      </fieldset>
-
-      <br><br>
-
-      <fieldset>
-        <legend>Select the cheese you want to add</legend>
-        <input
-          type="checkbox"
-          id="parmesan"
-          name="cheeses"
-          value="parmesan"
-        /><label for="parmesan">Parmesan</label>
-
-        <br>
-
-        <input
-          type="checkbox"
-          id="reggiano"
-          name="cheeses"
-          value="reggiano"
-        /><label for="reggiano">Reggiano</label>
-
-        <br>
-
-        <input
-          type="checkbox"
-          id="mozarella"
-          name="cheeses"
-          value="mozarella"
-        /><label for="mozarella">Mozarella</label>
-      </fieldset>
-
-      <br><br>
-
-      <!-- "Multiple" attribute allows
-        selection of multiple options -->
-      <label for="toppings">Toppings</label>
-      <br>
-        <select id="toppings" name="toppings" size="5" style="width: 200px" multiple>
-          <!-- "Optgroup" creates header in dropdown
-          to group items together -->
-          <optgroup label="meats - $1 extra">
-            <option value="sausage">Sausage</option>
-            <option value="ham">Ham</option>
-            <option value="pepperoni">Pepperoni</option>
-          </optgroup>
-          <option value="peppers">Peppers</option>
-          <option value="pineapple">Pineapple</option>
-          <option value="spinach">Spinach</option>
-        </select>
-
-        <br><br>
-
-      <input type="submit" id="process" />
-    </form>
+            <textarea
+              id="comments"
+              name="comments"
+              placeholder="comments"
+            ></textarea>
+  
+          <br><br>
+  
+        <input type="submit" id="process" />
+      </form>
+    </main>
   </body>
 </html>
